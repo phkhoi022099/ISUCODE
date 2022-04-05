@@ -34,7 +34,7 @@
         if(result.next())
         {
         	out.println("Login Success");
-        	response.sendRedirect("Main.html");
+        	response.sendRedirect("MyAccount.jsp");
         	}
         else
         {
