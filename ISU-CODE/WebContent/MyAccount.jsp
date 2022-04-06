@@ -24,12 +24,12 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
 				<ul class="nav navbar-nav">
 					<li><a href="Main.html"><span class="glyphicon glyphicon-home"></span> Homepage</a></li>
-					<li><a href="Login.html"><span class="glyphicon glyphicon-login"></span> Login</a></li>
-					<li><a href="CreateAccount.html"><span class="glyphicon glyphicon-Create"></span> Create Account</a></li>
-					<li><a href="MyAccount.html"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
+			    	<!-- <li><a href="Login.html"><span class="glyphicon glyphicon-login"></span> Login</a></li>
+					<li><a href="CreateAccount.html"><span class="glyphicon glyphicon-Create"></span> Create Account</a></li> -->
+					<li><a href="MyAccount.jsp"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
                     <li><a href="Tutorial.html"><span class="glyphicon glyphicon-Tutorials"></span> Tutorials</a></li> 
                     <li><a href="Debugging.html"><span class="glyphicon glyphicon-Debugging"></span> Debugging</a></li> 
-                    <li><a href="Admin.html"><span class="glyphicon glyphicon-admin"></span> Admin</a></li>
+                     <li><a href="Admin.html"><span class="glyphicon glyphicon-admin"></span> Admin</a></li>
                      <li><a href="Logout.html"><span class="glyphicon glyphicon-logout"></span> Logout</a></li>
 				</ul>
             </div>

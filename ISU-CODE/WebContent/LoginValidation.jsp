@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+    <%@ page import = "java.io.*,java.util.*,java.sql.*,Validation.DatabaseConnect" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,21 +9,12 @@
 </head>
 <body>
 <%
-    String driverName="com.mysql.jdbc.Driver";
-    String dbUsername="root";
-    String dbPassword="redbird!";
-    String dbName="ISU_CODE";
-    String dbURL = "jdbc:mysql:// localhost:3306/";
-    RequestDispatcher rd;
+    
     try {
-    	
-    	Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection(dbURL + dbName,
-                                                     dbUsername, 
-                                                     dbPassword);
+    	DatabaseConnect dbc=new DatabaseConnect();
+        Connection con=dbc.connection();
         String email=request.getParameter("email"); 
         String password=request.getParameter("password"); 
-       
         Statement st = con.createStatement();
         String sql = "SELECT * FROM accounts WHERE Email = ? and Password = ?";
         PreparedStatement statement = con.prepareStatement(sql);
@@ -40,8 +31,6 @@
         {
         	out.println("Login failed! Please <a href='Login.html'> Login </a> to continue.");
         }
-        
-        
         }
         	catch (SQLException ex) {
         System.out.println("SQLException: " + ex.getMessage());

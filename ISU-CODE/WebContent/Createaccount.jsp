@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "java.io.*,java.util.*,java.sql.*,Validation.DatabaseConnect" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +9,11 @@
 </head>
 <body>
 <%
-    String driverName="com.mysql.jdbc.Driver";
-    String dbUsername="root";
-    String dbPassword="redbird!";
-    String dbName="ISU_CODE";
-    String dbURL = "jdbc:mysql:// localhost:3306/";
-    RequestDispatcher rd;
-    try {
-    	
-    	Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection(dbURL + dbName,
-                                                     dbUsername, 
-                                                     dbPassword);
+    
+        try
+         {
+        DatabaseConnect dbc=new DatabaseConnect();
+        Connection con=dbc.connection();
         String name=request.getParameter("name"); 
         String email=request.getParameter("email"); 
         String password1=request.getParameter("password1");
@@ -38,6 +31,7 @@
         	
         	}
         }
+
         	catch (SQLException ex) {
         
         System.out.println("SQLException: " + ex.getMessage());
