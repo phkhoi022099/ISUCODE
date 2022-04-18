@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register</title>
+<title>Update Account</title>
 </head>
 <body>
 <%
@@ -14,24 +14,27 @@
          {
         DatabaseConnect dbc=new DatabaseConnect();
         Connection con=dbc.connection("com.mysql.jdbc.Driver","root","redbird!","ISU_CODE","jdbc:mysql:// localhost:3306/");
-        String name=request.getParameter("name"); 
-        String email=request.getParameter("email"); 
-        String password1=request.getParameter("password1");
-        String password2=request.getParameter("password2");  
-        if(password1.equals(password2))
-        {
+        String name=request.getParameter("name");
+        String old_password=request.getParameter("old_password");
+        String new_password=request.getParameter("new_password");
         Statement st = con.createStatement();
-        st.executeUpdate("insert into accounts(Name,Email,Password,Role) values('" + name + "','" + email + "','" + password1 + "','0')");
-        response.sendRedirect("Login.html");
-   
-        } 
-        else
-        	{
-        	 out.println("Both passwords are not same! Please <a href='CreateAccount.html'>create account</a>again to continue.");
-        	
-        	}
+        String sql="Update accounts set Name=?,Email=?,Password=? where email="";
+        ps = con.prepareStatement(sql);
+        ps.setString(1,id);
+        ps.setString(2, first_name);
+        ps.setString(3, last_name);
+        ps.setString(4, city_name);
+        ps.setString(5, email);
+        int i = ps.executeUpdate();
+        if(i > 0)
+        {
+        out.print("Record Updated Successfully");
         }
-
+        else
+        {
+        out.print("There is a problem in updating Record.");
+        } 
+         }
         	catch (SQLException ex) {
         
         System.out.println("SQLException: " + ex.getMessage());
