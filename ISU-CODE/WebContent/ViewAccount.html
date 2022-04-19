@@ -6,7 +6,6 @@
     <title>ISU CODE</title>
     <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/bookTableNotUsedNow.css" />
-	<script type="text/javascript" src="IT353 project.js"></script>
   </head>
   <header>
    <div id="topHeaderRow" >
@@ -24,13 +23,12 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
 				<ul class="nav navbar-nav">
 					<li><a href="Main.html"><span class="glyphicon glyphicon-home"></span> HomePage</a></li>
-					<!-- <li><a href="Login.html"><span class="glyphicon glyphicon-login"></span> Login</a></li>  -->
-					<!-- <li><a href="CreateAccount.html"><span class="glyphicon glyphicon-Create"></span> Create Account</a></li> -->
+					<li><a href="CreateAccount.html"><span class="glyphicon glyphicon-Create"></span> Create Account</a></li>
 					<li><a href="MyAccount.jsp"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
                     <li><a href="Tutorial.html"><span class="glyphicon glyphicon-Tutorials"></span> Tutorials</a></li> 
                     <li><a href="Debugging.html"><span class="glyphicon glyphicon-Debugging"></span> Debugging</a></li> 
                     <li><a href="Admin.html"><span class="glyphicon glyphicon-admin"></span> Admin</a></li>
-                     <li><a href="Logout.html"><span class="glyphicon glyphicon-logout"></span> Logout</a></li>
+                    <li><a href="Logout.html"><span class="glyphicon glyphicon-logout"></span> Logout</a></li>
 				</ul>
             </div>
          </nav>
@@ -44,34 +42,22 @@
 </header>   
 <body>
 
+
+
 <!-- TUTORIAL LANGUAGES -->
     <div class="container">
-        <div class="col-md-3">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Tutorials</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                    	<li><a href="Java.html" class="text-danger">JAVA</a></li>
-						<li><a href="Python.html" class="text-danger">PYTHON</a></li>
-						<li><a href="Html.html" class="text-danger">HTML</a></li>
-						<li><a href="Cplus.html" class="text-danger">C++</a></li>
-                    </ul>
-                </div>
-            </div>
-
-<!-- SEARCH -->
+    <div class="container">
+      <!-- SEARCH -->
            <div class="panel panel-danger">
 				<div class="panel-heading">
-					<h3 class="panel-title">Search for Tutorial</h3>
+					<h3 class="panel-title">Search for Account</h3>
 				</div>
 				<div class="container">
 		<div class="row">
 			<form class="form"  id="searchForm" action="searchResults.php" method="POST">
 				<fieldset class="form__panel">
 					</br>
-					<label>enter tutorial title</label>
+					<label>enter user email</label>
 					<input type="text" class="textbox" name="TutorialSearch" value="">
 					</br>
 					</br>
@@ -81,37 +67,67 @@
 					</div>
 					</div>
 			</div>       
-		</div>
-		<div class="container">
+		
+        <table class="table table-bordered" style="	font-weight: bold;font-size: 15px;">
 					
-			<h1>The place for excellent tutorials for beginner coders</h1>
-			<h2>please select a coding language to view tutorials</h2>
-			<h2>or search for a tutorial title</h2>
-		
-    	</div>
-		
+						<tr>
+						<br/>
+						<br/>
+						</tr>
+						<tr>
+							<td >Email</td>    
+							<td >Post email here</td> 
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<td >Name</td>    
+							<td >Post name here </td> 
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<td >Password </td>    
+							<td >Post Password here </td> 
+						</tr>
+					</table>
+		</div>
+		<div class="row">
+			<form class="form"  id="DeleteAccount" action="" method="POST">
+				<fieldset class="form__panel">
+					<button type="submit" class="btn btn-danger">Delete</button>
+					</fieldset>
+					</form>
+					<form class="form"  id="PromoteAccount" action="" method="POST">
+				<fieldset class="form__panel">
+					<button type="submit" class="btn btn-danger">Promote</button>
+					</fieldset>
+					</form>
+					<form class="form"  id="SuspendAccount" action="" method="POST">
+				<fieldset class="form__panel">
+					<button type="submit" class="btn btn-danger">Suspend</button>
+					</fieldset>
+					</form>
+					</div>
+	
     </div> <!-- end container -->
-    
-    
+
 <footer>
 	<div id="mainNavigationRow" >
 		<div class="container">
 			<nav class="navbar navbar-inverse" role="navigation">
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="AboutUs.html">About Us</a></li>                             
-						<li><a href="#"><strong>Share:</strong></a></li>
-						<li><a href="#"><img src="images/social/email_16.png" alt="Email this to someone" /></a></li>
-						<li><a href="#"><img src="images/social/rss_16.png" alt="Syndicated content" /></a></li>  
-						<li><a href="#"><img src="images/social/twitter_16.png" alt="Share this on Twitter" /></a></li>          
-						<li><a href="#"><img src="images/social/facebook_16.png" alt="Share this on Facebook" /></a></li>          
-						<li><a href="#"><img src="images/social/flickr_16.png" alt="Share this on Flickr" /></a></li>          						
+						<li><a href="AboutUs.html">About Us</a></li>
+						<li><a href="ContactUs.html">Contact Us</a></li>                               
+						
 					</ul>  
 				</div>
 			</nav>
 		</div>  <!-- end container -->
 	</div>  <!-- end mainNavigationRow -->
   
+	
 </footer>
   </body>
 </html>

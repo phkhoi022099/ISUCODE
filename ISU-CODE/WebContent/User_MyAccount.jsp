@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*,Validation.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISU CODE</title>
     <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/bookTableNotUsedNow.css" />
-	<script type="text/javascript" src="IT353 project.js"></script>
+	
   </head>
   <header>
    <div id="topHeaderRow" >
@@ -32,7 +32,11 @@
 					<li><a href="MyAccount.jsp"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
                     <li><a href="Tutorial.html"><span class="glyphicon glyphicon-Tutorials"></span> Tutorials</a></li> 
                     <li><a href="Debugging.html"><span class="glyphicon glyphicon-Debugging"></span> Debugging</a></li> 
-                     <li><a href="Logout.html"><span class="glyphicon glyphicon-logout"></span> Logout</a></li>
+                    <li><a href="Logout.jsp" ><span class="glyphicon glyphicon-logout"></span>Logout</a></li>
+                    <li><div class="form-group"><button type="submit" class="btn btn-danger">LOGOUT</button></li>
+                    <%
+	
+    %>
 				</ul>
             </div>
          </nav>
@@ -41,16 +45,22 @@
 	  <div style="height: 180px; display:flex; align-items:center; justify-content:center;">
 		<img style="height: 180px;"src="images\shot pic\sealISU.png" alt="seal  test">
 	  </div>
-   </div>  
-  
+   </div>
 </header>   
 <body>
 <%
+Account acc=(Account)session.getAttribute("acc"); 
+if(acc==null)
+{
+	RequestDispatcher rd = request.getRequestDispatcher("Login.html");
 
+    rd.forward(request,response);
+}
 
-	Account acc=(Account)session.getAttribute("acc"); 
 	User user=acc.getUser();
-    %>	<div class="container">
+
+    %>
+    	<div class="container">
 			<div class="row">
 				<div class="col-md-3">
 					<img style="width: 100%;" src="images/shot pic/redbirdISU.jpg" alt="redbird">
@@ -73,10 +83,6 @@
 							<td ><%=user.getName() %> </td> 
 						</tr>
 						<tr>
-						</tr>
-						<tr>
-							<td >Password </td>    
-							<td ><%=user.getPassword() %> </td>  
 						</tr>
 						
 					</table>
@@ -122,14 +128,8 @@
                         <nav class="navbar navbar-inverse" role="navigation">
                             <div class="collapse navbar-collapse navbar-ex1-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="aboutUs.html">About Us</a></li>
-                                    <li><a href="howToUse.html">How to Use</a></li>                               
-                                    <li><a href="#"><strong>Share:</strong></a></li>
-                                    <li><a href="#"><img src="images/social/email_16.png" alt="Email this to someone" /></a></li>
-                                    <li><a href="#"><img src="images/social/rss_16.png" alt="Syndicated content" /></a></li>  
-                                    <li><a href="#"><img src="images/social/twitter_16.png" alt="Share this on Twitter" /></a></li>          
-                                    <li><a href="#"><img src="images/social/facebook_16.png" alt="Share this on Facebook" /></a></li>          
-                                    <li><a href="#"><img src="images/social/flickr_16.png" alt="Share this on Flickr" /></a></li>          						
+                                    <li><a href="AboutUs.html">About Us</a></li>                             
+                                    				
                                 </ul>  
                             </div>
                         </nav>

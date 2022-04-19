@@ -44,15 +44,28 @@
 </header>   
 <body>
   		<div class="container">
-			<div class="row">
-			<h1>Admin webpage</h1>
-				<div class="col-md-3">
-					<img style="width: 100%;" src="images/shot pic/redbirdISU.jpg" alt="redbird">
-				</div>
+  		<div class="row">
+  		
+        <div class="col-md-3">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Admin Options</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                    	<li><a href="PostTutorial.html" class="text-danger">Post Tutorial</a></li>
+						<li><a href="ViewAccount.html" class="text-danger">View Accounts</a></li>
+						<li><a href="ViewComment.html" class="text-danger">View Comments</a></li>
+						<li><a href="" class="text-danger"></a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+  				
 				<div class="col-md-5">
-				
+				<h1>Admin webpage</h1>
 					<table class="table table-bordered" style="	font-weight: bold;font-size: 15px;">
-						<caption class="results__caption">Account</caption>
+						<caption class="results__caption">Admin Table ?????</caption>
 						<tr>
 						<br/>
 						<br/>
@@ -75,68 +88,15 @@
 						</tr>
 					</table>
 				</div>
-				
-				<div class="col-md-4">
-					<section class="results">
-						<br/>
-						<br/>
-						<p><strong>My info</strong></p>
-						<!-- <?php
-							$serverName = "itkmssql";
-							$connectionOptions = array(
-							//*****************************
-								"Database" => "it426g5",
-								"Uid" => "it426g5",
-								"PWD" => "redbird!"
-							);
-							
-							//Establishes the connection
-							$conn = sqlsrv_connect($serverName, $connectionOptions);
-							
-							$id=$_SESSION["email"];
-							$tableName = "Account";	
-							$sql = "select * from Item where Account.name='Daniel F2';";
-							
-							$stmt = sqlsrv_query($conn, $sql);
-							while($row = sqlsrv_fetch_array($stmt)){
-								echo "<div class='panel panel-default'>
-									<div class='panel-body'>
-										<div class='card text-center' >";
-											$name= $row[0];
-											$num= $row[2];
-											if(strpos($name,'Bus') !== false){ 
-												$package='business';
-											}
-											if(strpos($name,'Tec') !== false){ 
-												$package='technology';
-											}
-											if(strpos($name,'Eng') !== false){ 
-												$package='english';
-											}
-											if(strpos($name,'Sci') !== false){ 
-												$package='science';
-											}
-											if(strpos($name,'Art') !== false){ 
-												$package='art';
-											}
-											echo"<tr><td><img src='images/$package/$num.jpg' class='pic'></td>";
-										echo"</div>";
-										echo "<td>" . $stmt . "</td>
-									</div>
-								</div>";
-							}
-						?> -->
-					</section>
-				</div>
 			</div>
+			
             <footer>
                 <div id="mainNavigationRow" >
                     <div class="container">
                         <nav class="navbar navbar-inverse" role="navigation">
                             <div class="collapse navbar-collapse navbar-ex1-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="AboutUs.html">About Us</a></li>
-                                    <li><a href="howToUse.html">How to Use</a></li>                               
+                                    <li><a href="AboutUs.html">About Us</a></li>                         
                                     <li><a href="#"><strong>Share:</strong></a></li>
                                     <li><a href="#"><img src="images/social/email_16.png" alt="Email this to someone" /></a></li>
                                     <li><a href="#"><img src="images/social/rss_16.png" alt="Syndicated content" /></a></li>  
@@ -148,15 +108,7 @@
                         </nav>
                     </div>  <!-- end container -->
                 </div>  <!-- end mainNavigationRow -->
-              
-                <div id="copyrightRow">
-                    <div class="container">
-                        <div class="row">
-                            <p class="text-muted">All images are copyright to their owners.
-                            <span class="pull-right">&copy; 2019 Copyright</span></p>
-                        </div>
-                    </div>
-                </div>
+       
             </footer>
               </body>
             </html>
