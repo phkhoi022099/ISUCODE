@@ -44,7 +44,7 @@
         		user = new User(name,email,password,role);
         		acc = new Account(user);
         		session.setAttribute("acc",acc);
-        		response.sendRedirect("Debugger_MyAccount.jsp");
+        		response.sendRedirect("Debug_MyAccount.jsp");
         		}
         	else
         	{

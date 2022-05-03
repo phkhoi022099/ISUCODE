@@ -26,27 +26,20 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
 				<ul class="nav navbar-nav">
-					<li><a href="Main.html"><span class="glyphicon glyphicon-home"></span> Homepage</a></li>
-			    	<!-- <li><a href="Login.html"><span class="glyphicon glyphicon-login"></span> Login</a></li>
-					<li><a href="CreateAccount.html"><span class="glyphicon glyphicon-Create"></span> Create Account</a></li> -->
-					<li><a href="MyAccount.jsp"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
+					<li><a href="User_MyAccount.jsp"><span class="glyphicon glyphicon-Account"></span> My Account</a></li>  
                     <li><a href="Tutorial.html"><span class="glyphicon glyphicon-Tutorials"></span> Tutorials</a></li> 
                     <li><a href="Debugging.html"><span class="glyphicon glyphicon-Debugging"></span> Debugging</a></li> 
                     <li><a href="Logout.jsp" ><span class="glyphicon glyphicon-logout"></span>Logout</a></li>
-                    <li><div class="form-group"><button type="submit" class="btn btn-danger">LOGOUT</button></li>
-                    <%
-	
-    %>
 				</ul>
             </div>
          </nav>
       </div>
-	  
 	  <div style="height: 180px; display:flex; align-items:center; justify-content:center;">
 		<img style="height: 180px;"src="images\shot pic\sealISU.png" alt="seal  test">
 	  </div>
    </div>
 </header>   
+
 <body>
 <%
 Account acc=(Account)session.getAttribute("acc"); 
@@ -56,9 +49,7 @@ if(acc==null)
 
     rd.forward(request,response);
 }
-
 	User user=acc.getUser();
-
     %>
     	<div class="container">
 			<div class="row">
@@ -102,21 +93,53 @@ if(acc==null)
 						<div class="col-md-8">
 							<div class="p-3 py-5">
 							 <form action="UpdateAccount.jsp" method="POST" role="form" class="form-horizontal" >
-							<h2>Update Account</h2>
+							<h2>Update Account Name</h2>
 								<div class="d-flex justify-content-between align-items-center mb-3">
+								
 								<div class="row mt-2">
 									<div class="col-md-6"><input type="text" class="form-control" placeholder="name" name="name"></div>
 								</div>
-								<div class="row mt-3">
-									<div class="col-md-6"><input type="text" class="form-control" placeholder="old password" name="old_password"></div>
-								</div>
-								<div class="row mt-3">
-									<div class="col-md-6"><input type="text" class="form-control" placeholder="new password" name="new_password"></div>
+								<div class="row mt-2">
+									<div class="col-md-6"><input type="text" class="form-control" placeholder="email" name="email"></div>
 								</div>
 								<input type="submit" class="form__btn">
-
 							</div>
 							 </form>
+							 
+							 							<!-- form card change password -->
+                    <div class="card card-outline-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0">Change Password</h3>
+                        </div>
+                        </div>
+						 
+							    <form action="UpdateAccountPassword.jsp" method="POST" class="form" role="form" autocomplete="off">
+                                <div class="form-group">
+                                <div class="row mt-2">
+									<div class="col-md-6"><input type="text" class="form-control" placeholder="email" name="email"></div>
+								</div>
+                                    <label for="inputPasswordOld">Current Password</label>
+                                    <input type="password" class="form-control" name="inputPasswordOld" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordNew">New Password</label>
+                                    <input type="password" class="form-control" name="inputPasswordNew" required="">
+                                    <span class="form-text small text-muted">
+                                            The password must be 8-20 characters, and must <em>not</em> contain spaces.
+                                        </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPasswordNewVerify">Verify</label>
+                                    <input type="password" class="form-control" name="inputPasswordNewVerify" required="">
+                                    <span class="form-text small text-muted">
+                                            To confirm, type the new password again.
+                                        </span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right">Save</button>
+                                </div>
+                            </form>
+                            
 						</div>
 					</div>
 				</div>

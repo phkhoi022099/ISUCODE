@@ -46,14 +46,29 @@
 
 <!-- TUTORIAL LANGUAGES -->
     <div class="container">
-    <div class="container">
+     <div class="col-md-3">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Admin Options</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                    	<li><a href="PostTutorial.html" class="text-danger">Post Tutorial</a></li>
+						<li><a href="ViewMessages.html" class="text-danger">View Messages</a></li>
+						<li><a href="ViewComment.html" class="text-danger">View Comments</a></li>
+						<li><a href="" class="text-danger"></a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>  
+    
+
       <!-- SEARCH -->
+       <div class="col-md-5">
            <div class="panel panel-danger">
 				<div class="panel-heading">
 					<h3 class="panel-title">Search for Account</h3>
 				</div>
-				<div class="container">
-		<div class="row">
 			<form class="form"  id="searchForm" action="searchResults.php" method="POST">
 				<fieldset class="form__panel">
 					</br>
@@ -64,9 +79,9 @@
 					<button type="submit" class="btn btn-danger">Submit</button>
 					</fieldset>
 					</form>
-					</div>
-					</div>
-			</div>       
+			 </div>
+			 </div>
+			     
 		
         <table class="table table-bordered" style="	font-weight: bold;font-size: 15px;">
 					
@@ -91,7 +106,7 @@
 							<td >Post Password here </td> 
 						</tr>
 					</table>
-		</div>
+		
 		<div class="row">
 			<form class="form"  id="DeleteAccount" action="" method="POST">
 				<fieldset class="form__panel">
